@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="PositiveTestSuite" verbose="1">
+<suite name="CheckboxPage" verbose="1">
 
-  <test name="PositiveTests">
+  <test name="Checkbox Page Tests">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.herokuapp.theinternet.loginpagetests.PositiveLoginTests"/>
+      <class name="com.herokuapp.theinternet.tests.CheckboxesTest"/>
     </classes>
   </test>
 

@@ -1,6 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="NegativeTestSuite" parallel="tests" thread-count="5">
+<suite name="LoginPageTestSuite" parallel="tests" thread-count="5">
+
+  <test name="PositiveLoginTest-FF">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.herokuapp.theinternet.tests.LoginTests">
+        <methods>
+          <include name="loginTest"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
 
   <test name="NegativeUsernameTest-CH">
     <parameter name="username" value="incorrectUsername"/>
@@ -8,7 +19,10 @@
     <parameter name="expectedMessage" value="Your username is invalid!"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.herokuapp.theinternet.loginpagetests.NegativeLoginTest">
+      <class name="com.herokuapp.theinternet.tests.LoginTests">
+        <methods>
+          <include name="loginNegativeTest"/>
+        </methods>
       </class>
     </classes>
   </test>
@@ -19,7 +33,10 @@
     <parameter name="expectedMessage" value="Your username is invalid!"/>
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.herokuapp.theinternet.loginpagetests.NegativeLoginTest">
+      <class name="com.herokuapp.theinternet.tests.LoginTests">
+        <methods>
+          <include name="loginNegativeTest"/>
+        </methods>
       </class>
     </classes>
   </test>
@@ -30,7 +47,10 @@
     <parameter name="expectedMessage" value="Your password is invalid!"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.herokuapp.theinternet.loginpagetests.NegativeLoginTest">
+      <class name="com.herokuapp.theinternet.tests.LoginTests">
+        <methods>
+          <include name="loginNegativeTest"/>
+        </methods>
       </class>
     </classes>
   </test>
@@ -41,7 +61,10 @@
     <parameter name="expectedMessage" value="Your password is invalid!"/>
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.herokuapp.theinternet.loginpagetests.NegativeLoginTest">
+      <class name="com.herokuapp.theinternet.tests.LoginTests">
+        <methods>
+          <include name="loginNegativeTest"/>
+        </methods>
       </class>
     </classes>
   </test>

@@ -9,14 +9,16 @@ public class SecureAreaPage extends BasePage
 {
     private String pageURL = "https://the-internet.herokuapp.com/secure";
 
-    //locators
-    private By logoutButtonLocator = By.xpath("//a[@href='/logout']");
-    private By alertLocator = By.xpath("//div[@id='flash']");
-
+    //constructor
     public SecureAreaPage(WebDriver driver, Logger logger)
     {
         super(driver, logger);
     }
+
+    //locators
+    private By logoutButtonLocator = By.xpath("//a[@href='/logout']");
+    private By flashMessageLocator = By.xpath("//div[@id='flash']");
+
 
     public String getPageURL()
     {
@@ -30,7 +32,7 @@ public class SecureAreaPage extends BasePage
 
     public String getAlertText()
     {
-        return locateElement(alertLocator).getText();
+        return locateElement(flashMessageLocator).getText();
     }
 
     public LoginPage logout()

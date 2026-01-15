@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BasePage
 {
@@ -53,6 +54,16 @@ public class BasePage
     protected WebElement locateElement(By locator)
     {
         return driver.findElement(locator);
+    }
+
+    /**
+     * Find all elements using the given locator
+     * @param locator Element locator
+     * @return List of elements located
+     */
+    protected List<WebElement> locateElements(By locator)
+    {
+        return driver.findElements(locator);
     }
 
     protected void click(By locator)

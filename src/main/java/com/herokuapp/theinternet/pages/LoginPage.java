@@ -10,6 +10,7 @@ public class LoginPage extends BasePage
     private By usernameInputLocator = By.xpath("//input[@id='username']");
     private By passwordInputLocator = By.xpath("//input[@id='password']");
     private By submitButtonLocator = By.xpath("//button[@type='submit']");
+    private By flashMessageLocator = By.xpath("//div[@id='flash']");
 
     public LoginPage(WebDriver driver, Logger logger)
     {
@@ -32,6 +33,11 @@ public class LoginPage extends BasePage
     {
         //driver.findElement(submitbuttonLocator).click();
         click(submitButtonLocator);
+    }
+
+    public String getAlertText()
+    {
+        return locateElement(flashMessageLocator).getText();
     }
 
     public SecureAreaPage login(String username, String password)

@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet.loginpagetests;
+package com.herokuapp.theinternet.tests;
 
 import com.herokuapp.theinternet.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
@@ -6,11 +6,12 @@ import com.herokuapp.theinternet.pages.SecureAreaPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
 
-public class PositiveLoginTests extends TestUtilities
+public class LoginTests extends TestUtilities
 {
     @Test
-    public void logInTest()
+    public void loginTest()
     {
         WelcomePage welcomePage = new WelcomePage(driver, logger);
 
@@ -55,5 +56,31 @@ public class PositiveLoginTests extends TestUtilities
         //Assert.assertTrue(actualSuccessMessage.contains(expectedSuccessMessage), "actualSuccessMessage does not contain expectedSuccessMessage\nexpectedSuccessMessage: " + expectedSuccessMessage + "\nactualSuccessMessage: " + actualSuccessMessage);
 
         Assert.assertTrue(secureAreaPage.getAlertText().contains(expectedSuccessMessage));
+    }
+
+    @Parameters({ "username", "password", "expectedMessage" })
+    @Test(priority = 1)
+    public void loginNegativeTest(String username, String password, String expectedErrorMessage)
+    {
+        logger.info("START: Negative Login Test");
+
+        WelcomePage welcomePage = new WelcomePage(driver, logger);
+
+        // open main page
+        welcomePage.openPage();
+
+        // Click on Form Authentication link
+        LoginPage loginPage = welcomePage.clickFormAuthenticationLink();
+
+        // enter username and password
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+
+        // push log in button
+        loginPage.clickSubmit();
+
+        // Verification
+        String actualErrorMessage = loginPage.getAlertText();
+        Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage));
     }
 }
