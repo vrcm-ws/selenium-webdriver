@@ -10,6 +10,7 @@ public class WelcomePage extends BasePage
 
     //locators
     By formAutheticationLocator = By.xpath("//a[text()='Form Authentication']");
+    By checkboxesLocator = By.xpath("//a[text()='Checkboxes']");
 
     public WelcomePage(WebDriver driver, Logger logger)
     {
@@ -30,5 +31,15 @@ public class WelcomePage extends BasePage
         click(formAutheticationLocator);
 
         return new LoginPage(driver, logger);
+    }
+
+    public CheckboxPage clickCheckboxesLink()
+    {
+        logger.info("Clicking Checkboxes link");
+
+        //driver.findElement(formAutheticationLocator).click();
+        click(checkboxesLocator);
+
+        return new CheckboxPage(driver, logger);
     }
 }

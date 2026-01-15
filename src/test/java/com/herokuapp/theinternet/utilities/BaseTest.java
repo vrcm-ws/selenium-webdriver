@@ -1,5 +1,6 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.utilities;
 
+import com.herokuapp.theinternet.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -8,8 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.apache.logging.log4j.Logger;
-
-import java.time.Duration;
 
 public class BaseTest
 {
