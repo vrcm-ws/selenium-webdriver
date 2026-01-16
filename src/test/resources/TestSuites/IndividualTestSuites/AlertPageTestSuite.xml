@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="CheckboxPageTestSuite" verbose="1">
+<suite name="AlertPageTestSuite" verbose="1">
 
-  <test name="Checkbox Page Tests">
+  <test name="Alert Page Tests">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.herokuapp.theinternet.tests.CheckboxesTest"/>
+      <class name="com.herokuapp.theinternet.tests.AlertsTest"/>
     </classes>
   </test>
 

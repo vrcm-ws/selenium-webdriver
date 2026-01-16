@@ -1,6 +1,5 @@
 package com.herokuapp.theinternet.utilities;
 
-import com.herokuapp.theinternet.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;

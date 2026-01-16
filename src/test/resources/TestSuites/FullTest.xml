@@ -5,6 +5,8 @@
   <suite-files>
     <suite-file path="IndividualTestSuites/LoginPageTestSuite.xml"/>
     <suite-file path="IndividualTestSuites/CheckboxPageTestSuite.xml"/>
+    <suite-file path="IndividualTestSuites/DropdownPageTestSuite.xml"/>
+    <suite-file path="IndividualTestSuites/AlertPageTestSuite.xml"/>
   </suite-files>
 
 </suite>

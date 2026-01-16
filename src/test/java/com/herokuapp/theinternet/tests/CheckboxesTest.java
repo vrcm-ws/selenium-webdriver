@@ -1,6 +1,6 @@
 package com.herokuapp.theinternet.tests;
 
-import com.herokuapp.theinternet.TestUtilities;
+import com.herokuapp.theinternet.utilities.TestUtilities;
 import com.herokuapp.theinternet.pages.CheckboxPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;

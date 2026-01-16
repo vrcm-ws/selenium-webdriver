@@ -1,6 +1,6 @@
 package com.herokuapp.theinternet.tests;
 
-import com.herokuapp.theinternet.TestUtilities;
+import com.herokuapp.theinternet.utilities.TestUtilities;
 import com.herokuapp.theinternet.pages.LoginPage;
 import com.herokuapp.theinternet.pages.SecureAreaPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
