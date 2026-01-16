@@ -13,7 +13,7 @@ public class WelcomePage extends BasePage
     By checkboxesLocator = By.xpath("//a[text()='Checkboxes']");
     By dropdownLocator = By.xpath("//a[text()='Dropdown']");
     By jsAlertsLocator = By.xpath("//a[text()='JavaScript Alerts']");
-
+    By multipleWindowLocator = By.xpath("//a[text()='Multiple Windows']");
 
     public WelcomePage(WebDriver driver, Logger logger)
     {
@@ -62,5 +62,14 @@ public class WelcomePage extends BasePage
         click(jsAlertsLocator);
 
         return new AlertPage(driver, logger);
+    }
+
+    public WindowPage clickMultipleWindowsLink()
+    {
+        logger.info("Clicking Multiple Windows link");
+
+        click(multipleWindowLocator);
+
+        return new WindowPage(driver, logger);
     }
 }

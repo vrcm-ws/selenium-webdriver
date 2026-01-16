@@ -7,7 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class BasePage
 {
@@ -69,6 +71,16 @@ public class BasePage
         locateElement(locator).click();
     }
 
+    public String getPageTitle()
+    {
+        return driver.getTitle();
+    }
+
+    public String getPageSource()
+    {
+        return driver.getPageSource();
+    }
+
     protected void type(By locator, String text)
     {
         waitForVisibilityOf(locator, timeout);
@@ -93,7 +105,6 @@ public class BasePage
         }
     }
 
-
     /**
      * Wait for an alert to be present ans switch to it
      * @return Alert
@@ -104,5 +115,24 @@ public class BasePage
         wait.until(ExpectedConditions.alertIsPresent());
 
         return driver.switchTo().alert();
+    }
+
+    public void switchToWindow(String windowTitle)
+    {
+        String baseWindow = driver.getWindowHandle();
+        Set<String> allWindows = driver.getWindowHandles();
+
+        for (String window : allWindows)
+        {
+            if (!window.equals(baseWindow))
+            {
+                driver.switchTo().window(window);
+
+                if (getPageTitle().equals(windowTitle))
+                {
+                    break;
+                }
+            }
+        }
     }
 }
