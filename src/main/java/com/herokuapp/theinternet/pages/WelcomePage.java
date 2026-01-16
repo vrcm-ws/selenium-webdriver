@@ -11,6 +11,9 @@ public class WelcomePage extends BasePage
     //locators
     By formAutheticationLocator = By.xpath("//a[text()='Form Authentication']");
     By checkboxesLocator = By.xpath("//a[text()='Checkboxes']");
+    By dropdownLocator = By.xpath("//a[text()='Dropdown']");
+    By jsAlertsLocator = By.xpath("//a[text()='JavaScript Alerts']");
+
 
     public WelcomePage(WebDriver driver, Logger logger)
     {
@@ -41,5 +44,23 @@ public class WelcomePage extends BasePage
         click(checkboxesLocator);
 
         return new CheckboxPage(driver, logger);
+    }
+
+    public DropdownPage clickDropdownLink()
+    {
+        logger.info("Clicking Dropdown link");
+
+        click(dropdownLocator);
+
+        return new DropdownPage(driver, logger);
+    }
+
+    public AlertPage clickAlertsLink()
+    {
+        logger.info("Clicking JS Alerts link");
+
+        click(jsAlertsLocator);
+
+        return new AlertPage(driver, logger);
     }
 }

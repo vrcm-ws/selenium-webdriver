@@ -1,4 +1,4 @@
-package com.herokuapp.theinternet;
+package com.herokuapp.theinternet.utilities;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;

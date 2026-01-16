@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="DropdownPageTestSuite" verbose="1">
+
+  <test name="Dropdown Test Option 1">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="option" value="1"/>
+    <classes>
+      <class name="com.herokuapp.theinternet.tests.DropdownTest"/>
+    </classes>
+  </test>
+
+  <test name="Dropdown Test Option 2">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="option" value="2"/>
+    <classes>
+      <class name="com.herokuapp.theinternet.tests.DropdownTest"/>
+    </classes>
+  </test>
+
+</suite>
