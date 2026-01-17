@@ -8,6 +8,9 @@
     <suite-file path="IndividualTestSuites/DropdownPageTestSuite.xml"/>
     <suite-file path="IndividualTestSuites/AlertPageTestSuite.xml"/>
     <suite-file path="IndividualTestSuites/WindowPageTestSuite.xml"/>
+    <suite-file path="IndividualTestSuites/EditorPageTestSuite.xml"/>
+    <suite-file path="IndividualTestSuites/KeyPressPageTestSuite.xml"/>
+    <suite-file path="IndividualTestSuites/DragAndDropPageTestSuite.xml"/>
   </suite-files>
 
 </suite>

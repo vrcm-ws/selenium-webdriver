@@ -14,7 +14,7 @@ public class WindowPage extends BasePage
     }
 
     //locators
-    By newWindowLocator = By.xpath("//a[text()='Click Here']");
+    private By newWindowLocator = By.xpath("//a[text()='Click Here']");
 
     public void openNewWindow()
     {

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="KeyPressPageTestSuite" verbose="1">
+
+  <test name="Key Press Page Tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.herokuapp.theinternet.tests.KeyPressTest"/>
+    </classes>
+  </test>
+
+</suite>
