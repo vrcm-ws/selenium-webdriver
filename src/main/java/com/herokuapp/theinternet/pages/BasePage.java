@@ -182,4 +182,9 @@ public class BasePage
         Actions action = new Actions(driver);
         action.dragAndDrop(locateElement(from), locateElement(to)).build().perform();
     }
+
+    protected void hoverOver(WebElement element)
+    {
+        new Actions(driver).moveToElement(element).build().perform();
+    }
 }

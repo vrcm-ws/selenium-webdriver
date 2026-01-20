@@ -11,6 +11,7 @@
     <suite-file path="IndividualTestSuites/EditorPageTestSuite.xml"/>
     <suite-file path="IndividualTestSuites/KeyPressPageTestSuite.xml"/>
     <suite-file path="IndividualTestSuites/DragAndDropPageTestSuite.xml"/>
+    <suite-file path="IndividualTestSuites/HoverPageTestSuite.xml"/>
   </suite-files>
 
 </suite>
