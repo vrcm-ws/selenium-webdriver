@@ -1,48 +1,34 @@
 package com.herokuapp.theinternet.tests;
 
-import com.herokuapp.theinternet.pages.HoverPage;
 import com.herokuapp.theinternet.pages.SliderPage;
 import com.herokuapp.theinternet.utilities.TestUtilities;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.text.DecimalFormat;
+
 public class SliderTest extends TestUtilities
 {
+    @Parameters({"position"})
     @Test
-    public void sliderTest()
+    public void sliderTest(double position)
     {
+        logger.info("START: Slider test at " + position);
+
         Actions actions = new Actions(driver);
+
+        DecimalFormat df = new DecimalFormat("###.#");
 
         SliderPage sliderPage = new SliderPage(driver, logger);
         sliderPage.openPage();
 
-        WebElement slider = driver.findElement(By.xpath("//input[@type='range']"));
+        sliderPage.moveSliderTo(position);
 
-        new Actions(driver)
-                .dragAndDropBy(slider, -50, 0)
-                .build()
-                .perform();
+        String expectedSliderValue = df.format(position);
+        String actualSliderValue = sliderPage.getSliderValue();
 
-        /*
-        actions.click(slider).build().perform();
-
-        for (int i = 0; i < 3; i++)
-        {
-            actions.sendKeys(Keys.ARROW_RIGHT).build().perform();
-        }
-
-         */
-
-        System.out.println(slider.getAttribute("min"));
-        System.out.println(slider.getAttribute("max"));
-        System.out.println(slider.getAttribute("step"));
-
-        System.out.println(slider.getSize());
-        System.out.println(slider.getSize().getWidth());
+        Assert.assertEquals(actualSliderValue, expectedSliderValue);
     }
 }
