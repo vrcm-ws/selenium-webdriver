@@ -11,11 +11,11 @@ import java.text.DecimalFormat;
 
 public class SliderTest extends TestUtilities
 {
-    @Parameters({"position"})
-    @Test
-    public void sliderTest(double position)
+
+    @Test(dataProvider = "positions")
+    public void sliderTest(int number,  double position)
     {
-        logger.info("START: Slider test at " + position);
+        logger.info("START: Slider test # " + number + " at " + position);
 
         Actions actions = new Actions(driver);
 

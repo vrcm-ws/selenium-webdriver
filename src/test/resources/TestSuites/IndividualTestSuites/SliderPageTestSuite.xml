@@ -3,40 +3,8 @@
 <suite name="SliderPageTestSuite" verbose="1">
 
   <test name="Slider Test Position 1">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="firefox"/>
     <parameter name="position" value="0.5"/>
-    <classes>
-      <class name="com.herokuapp.theinternet.tests.SliderTest"/>
-    </classes>
-  </test>
-
-  <test name="Slider Test Position 2">
-    <parameter name="browser" value="firefox"/>
-    <parameter name="position" value="2"/>
-    <classes>
-      <class name="com.herokuapp.theinternet.tests.SliderTest"/>
-    </classes>
-  </test>
-
-  <test name="Slider Test Position 3">
-    <parameter name="browser" value="chrome"/>
-    <parameter name="position" value="2.5"/>
-    <classes>
-      <class name="com.herokuapp.theinternet.tests.SliderTest"/>
-    </classes>
-  </test>
-
-  <test name="Slider Test Position 4">
-    <parameter name="browser" value="firefox"/>
-    <parameter name="position" value="3.5"/>
-    <classes>
-      <class name="com.herokuapp.theinternet.tests.SliderTest"/>
-    </classes>
-  </test>
-
-  <test name="Slider Test Position 5">
-    <parameter name="browser" value="chrome"/>
-    <parameter name="position" value="5"/>
     <classes>
       <class name="com.herokuapp.theinternet.tests.SliderTest"/>
     </classes>
