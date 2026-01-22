@@ -2,7 +2,7 @@
 
 <suite name="LoginPageTestSuite" parallel="tests" thread-count="5">
 
-  <test name="PositiveLoginTest-FF">
+  <test name="PositiveLoginTest">
     <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.herokuapp.theinternet.tests.LoginTests">
@@ -12,6 +12,19 @@
       </class>
     </classes>
   </test>
+
+  <test name="NegativeLoginTest">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.herokuapp.theinternet.tests.LoginTests">
+        <methods>
+          <include name="loginNegativeTest"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  <!--
 
   <test name="NegativeUsernameTest-CH">
     <parameter name="username" value="incorrectUsername"/>
@@ -68,5 +81,7 @@
       </class>
     </classes>
   </test>
+
+  -->
 
 </suite>
