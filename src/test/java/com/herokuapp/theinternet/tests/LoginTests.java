@@ -7,7 +7,7 @@ import com.herokuapp.theinternet.pages.SecureAreaPage;
 import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.annotations.Parameters;
+import org.testng.asserts.SoftAssert;
 
 import java.util.Map;
 
@@ -18,19 +18,24 @@ public class LoginTests extends TestUtilities
     {
         WelcomePage welcomePage = new WelcomePage(driver, logger);
 
+        SoftAssert softAssert = new SoftAssert();
+
         String username = "tomsmith";
         String password = "SuperSecretPassword!";
 
         welcomePage.openPage();
+        takeScreenshot("WelcomePage");
 
         LoginPage loginPage = welcomePage.clickFormAuthenticationLink( );
         SecureAreaPage secureAreaPage = loginPage.login(username, password);
 
-        Assert.assertEquals(secureAreaPage.getCurrentURL(), secureAreaPage.getPageURL());
-        Assert.assertTrue(secureAreaPage.isLogoutButtonVisible());
+        softAssert.assertEquals(secureAreaPage.getCurrentURL(), secureAreaPage.getPageURL());
+        softAssert.assertTrue(secureAreaPage.isLogoutButtonVisible());
 
         String expectedSuccessMessage = "You logged into a secure area!";
-        Assert.assertTrue(secureAreaPage.getAlertText().contains(expectedSuccessMessage));
+        softAssert.assertTrue(secureAreaPage.getAlertText().contains(expectedSuccessMessage));
+
+        softAssert.assertAll();
     }
 
     @Test(priority = 1, dataProvider = "csvReader", dataProviderClass = DataProviderCSV.class)
